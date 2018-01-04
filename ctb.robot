@@ -1186,7 +1186,7 @@ Login
 
 Внести зміни в тендер
    [Arguments]  ${username}  ${tender_uaid}  ${field_name}  ${field_value}
-   pag.Пошук тендера по ідентифікатору    ${username}  ${tender_uaid}
+   ctb.Пошук тендера по ідентифікатору    ${username}  ${tender_uaid}
    Click Element    id = edit-lot
    Input Text    ${locator.${field_name}}    ${field_value}
    Click Element    id=submit-auction-btn
