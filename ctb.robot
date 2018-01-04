@@ -419,7 +419,7 @@ Login
   Sleep    5   Ждем зарузки документа
 
 Перевірити та сховати повідомлення
-  ${isVisible}=   Run Keyword And Ignore Error   Wait Until Element Is Visible   id=close_inform_window   10
+  ${isVisible}=   Run Keyword And Ignore Error   Wait Until Element Is Visible   id=close_inform_window   5
   Run Keyword If   ${isVisible}   Сховати повідомлення
 
 Сховати повідомлення
@@ -1182,4 +1182,14 @@ Login
    Wait Until Page Contains   Ви дійсно відмовляєтесь очікувати дискваліфікації першого кандидата та забираєте гарантійний внесок?   10
    Підтвердження дії в модальном вікні
    Wait Until Page Contains   Заявка знята з черги на кваліфікацію. Очікуйте повернення гарантійного внеску   15
+   Перевірити та сховати повідомлення
+
+Внести зміни в тендер
+   [Arguments]  ${username}  ${tender_uaid}  ${field_name}  ${field_value}
+   pag.Пошук тендера по ідентифікатору    ${username}  ${tender_uaid}
+   Click Element    id = edit-lot
+   Input Text    ${locator.${field_name}}    ${field_value}
+   Click Element    id=submit-auction-btn
+   Sleep    3
+   Wait Until Page Contains   Успішно відредаговано   10
    Перевірити та сховати повідомлення
