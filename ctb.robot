@@ -1137,7 +1137,7 @@ Login
    ...   AND   Клацнути по випадаючому списку  ${drop_id}
    ...   AND   Element Should Be Visible   id=${action_id}
    Виконати дію   ${action_id}
-   Wait Until Element Is Visible   id=fileInput1
+   Wait Until Element Is Visible   id=fileInput1   10
    Приєднати документ   id=fileInput1   ${auction_protocol_path}
    Sleep    2
    Click Element   xpath=//input[@type="submit"]
